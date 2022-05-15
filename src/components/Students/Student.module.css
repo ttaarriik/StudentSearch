@@ -1,0 +1,98 @@
+/** @format */
+
+.image {
+	width: 5rem;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	width: inherit;
+	margin-top: 2rem;
+}
+
+.listItem {
+	display: flex;
+	margin-bottom: 1rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.listItem h1 {
+	text-transform: uppercase;
+	font-size: 2.3rem;
+	margin-bottom: 0.8rem;
+}
+
+.imageDiv {
+	width: 120px;
+	margin-right: 2rem;
+}
+
+.infoDiv {
+	font-weight: 300;
+}
+
+.infoDiv div {
+	padding-top: 5px;
+}
+
+.plus {
+	height: fit-content;
+	margin-left: auto;
+	margin-top: 2rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.plus svg {
+	font-size: 2rem;
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.plus svg:hover {
+	color: #000000;
+}
+
+.minus {
+	height: fit-content;
+	margin-left: auto;
+	margin-top: 2rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.minus svg {
+	font-size: 2rem;
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.minus svg:hover {
+	color: #000000;
+}
+
+.grades {
+	margin-top: 1rem;
+}
+
+.tag {
+	display: inline-block;
+	margin-right: 5px;
+	padding: 0.5rem;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	font-weight: 300;
+}
+
+.inputTag {
+	border: none;
+	font-size: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	color: rgba(0, 0, 0, 0.1);
+	margin-top: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+.inputTag:focus {
+	outline: none;
+	color: #000000;
+}

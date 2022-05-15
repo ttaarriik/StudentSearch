@@ -1,0 +1,8 @@
+/** @format */
+
+.card {
+	margin: 50px 20%;
+	height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
