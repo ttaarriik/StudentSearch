@@ -1,6 +1,7 @@
 /** @format */
 
 import classes from "./Card.module.css";
+import React from "react";
 
 const Card = (props) => {
 	return (
@@ -8,4 +9,4 @@ const Card = (props) => {
 	);
 };
 
-export default Card;
+export default React.memo(Card); //With the use memo we avoid unnecessary rerendering of this component on the students component

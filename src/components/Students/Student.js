@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Student = (props) => {
 	const [showGrades, setShowGrades] = useState(false);
+	const [isTagEmpty, setIsTagEmpty] = useState(false);
 
 	const calculateAverageGrade = (grades) => {
 		const stringToNumber = grades.map((grade) => parseFloat(grade));
@@ -22,6 +23,10 @@ const Student = (props) => {
 
 	const onEnterTag = (event) => {
 		if (event.code === "Enter") {
+			if (event.target.value.trim().length === 0) {
+				setIsTagEmpty(true);
+				return;
+			}
 			const studentList = [...props.studentList];
 			const searchedStudent = studentList.find(
 				(student) => student.id === props.id
@@ -30,13 +35,16 @@ const Student = (props) => {
 			studentList[itemIndex].tags.push(event.target.value);
 			props.addTag(studentList);
 			event.target.value = "";
+			setIsTagEmpty(false);
 		}
 	};
+
+	const validTag = isTagEmpty ? "tagError" : "";
 
 	return (
 		<li className={classes.listItem}>
 			<div className={classes.imageDiv}>
-				<img className={classes.image} src={props.pic} />
+				<img className={classes.image} src={props.pic} alt="student " />
 			</div>
 			<div className={classes.infoDiv}>
 				<h1>
@@ -56,17 +64,22 @@ const Student = (props) => {
 				{props.tags && (
 					<div>
 						{props.tags.map((tag) => (
-							<p className={classes.tag}>{tag}</p>
+							<p key={tag} className={classes.tag}>
+								{tag}
+							</p>
 						))}
 					</div>
 				)}
 
 				<input
-					className={classes.inputTag}
+					className={`${classes.inputTag} ${classes[validTag]}`}
 					onKeyDown={onEnterTag}
 					type="text"
 					placeholder="Add a tag"
 				/>
+				{isTagEmpty && (
+					<p className={classes.tagErrorMessage}>Tag must not be empty</p>
+				)}
 			</div>
 			{showGrades ? (
 				<button className={classes.minus} onClick={onShowGradesHandler}>

@@ -96,3 +96,12 @@
 	outline: none;
 	color: #000000;
 }
+
+.tagError {
+	border-color: red;
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+.tagErrorMessage {
+	color: red;
+}
